@@ -1,0 +1,25 @@
+{
+  "groups": [
+    {
+      "name": "lvxc.host",
+      "type": "com.lvxc.host.properties.HostProperties",
+      "sourceType": "com.lvxc.host.properties.HostProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "lvxc.host.enable",
+      "type": "java.lang.Boolean",
+      "description": "启用链接域名替换.",
+      "sourceType": "com.lvxc.host.properties.HostProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "lvxc.host.default-host",
+      "type": "java.lang.String",
+      "description": "默认链接域名.",
+      "sourceType": "com.lvxc.host.properties.HostProperties"
+    }
+  ],
+  "hints": []
+}

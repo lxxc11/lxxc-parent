@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lvxc.user.mapper.flw.SysFunctionMapper">
+
+    <select id="getFunctionListByRoleIds" resultType="com.lvxc.user.domain.vo.LoginFunction">
+        SELECT
+            sf.*
+        FROM
+            "sys_function" sf
+        JOIN "sys_role_menu_function" mf ON sf."id" = mf.function_id
+        WHERE
+            sf.del_flag = FALSE
+        AND sf.status = TRUE
+        <if test="list != null and list.size() > 0">
+            AND mf.role_id IN
+            <foreach collection="list" item="item" separator="," close=")" open="(" index="index">
+                #{item}
+            </foreach>
+        </if>
+    </select>
+
+</mapper>

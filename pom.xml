@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.lvxc</groupId>
+    <artifactId>lvxc-parent</artifactId>
+    <version>2.1.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.7.8</version>
+        <relativePath/>
+    </parent>
+
+    <modules>
+        <module>lvxc-encrypt-spring-boot</module>
+        <module>lvxc-encrypt-spring-boot-starter</module>
+        <module>lvxc-mybatis-plus-starter</module>
+        <module>lvxc-knife4j-starter</module>
+        <module>lvxc-multi-datasource-starter</module>
+        <module>lvxc-orika-starter</module>
+        <module>lvxc-web-dependency</module>
+        <module>lvxc-user-system-starter</module>
+        <module>lvxc-elasticsearch-starter</module>
+        <module>lvxc-common-starter</module>
+        <module>lvxc-shardingsphere-starter</module>
+        <module>lvxc-zwdd-starter</module>
+        <module>lvxc-flowable-starter</module>
+        <module>lvxc-data-encrypt-spring-boot-starter</module>
+        <module>lvxc-host-spring-boot-starter</module>
+        <module>lvxc-doc</module>
+    </modules>
+
+    <properties>
+        <velocity.version>2.3</velocity.version>
+        <mapstruct.version>1.4.1.Final</mapstruct.version>
+        <postgresql.version>42.5.4</postgresql.version>
+        <fastjson.version>1.2.83</fastjson.version>
+        <hutool.version>5.8.18</hutool.version>
+        <mybatis-plus.version>3.5.3</mybatis-plus.version>
+        <jasypt.version>1.9.3</jasypt.version>
+        <system-stubs-jupiter.version>2.0.1</system-stubs-jupiter.version>
+        <knife4j.version>4.0.0</knife4j.version>
+        <orika-core.version>1.5.4</orika-core.version>
+        <shardingsphere.version>5.4.0</shardingsphere.version>
+        <java.version>1.8</java.version>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spring-boot.version>2.7.8</spring-boot.version>
+        <lvxc-parent.version>2.1.1-SNAPSHOT</lvxc-parent.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-actuator</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-configuration-processor</artifactId>
+                <version>${spring-boot.version}</version>
+                <optional>true</optional>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <version>${spring-boot.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.lvxc</groupId>
+                <artifactId>lvxc-encrypt-spring-boot</artifactId>
+                <version>${lvxc-parent.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lvxc</groupId>
+                <artifactId>lvxc-encrypt-spring-boot-starter</artifactId>
+                <version>${lvxc-parent.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lvxc</groupId>
+                <artifactId>lvxc-knife4j-starter</artifactId>
+                <version>${lvxc-parent.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lvxc</groupId>
+                <artifactId>lvxc-mybatis-plus-starter</artifactId>
+                <version>${lvxc-parent.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lvxc</groupId>
+                <artifactId>lvxc-multi-datasource-starter</artifactId>
+                <version>${lvxc-parent.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lvxc</groupId>
+                <artifactId>lvxc-shardingsphere-starter</artifactId>
+                <version>${lvxc-parent.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lvxc</groupId>
+                <artifactId>lvxc-user-system-starter</artifactId>
+                <version>${lvxc-parent.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lvxc</groupId>
+                <artifactId>lvxc-orika-starter</artifactId>
+                <version>${lvxc-parent.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lvxc</groupId>
+                <artifactId>lvxc-web-dependency</artifactId>
+                <version>${lvxc-parent.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lvxc</groupId>
+                <artifactId>lvxc-data-encrypt-spring-boot-starter</artifactId>
+                <version>${lvxc-parent.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lvxc</groupId>
+                <artifactId>lvxc-host-spring-boot-starter</artifactId>
+                <version>${lvxc-parent.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lvxc</groupId>
+                <artifactId>lvxc-elasticsearch-starter</artifactId>
+                <version>${lvxc-parent.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lvxc</groupId>
+                <artifactId>lvxc-common-starter</artifactId>
+                <version>${lvxc-parent.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lvxc</groupId>
+                <artifactId>lvxc-zwdd-starter</artifactId>
+                <version>${lvxc-parent.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lvxc</groupId>
+                <artifactId>lvxc-flowable-starter</artifactId>
+                <version>${lvxc-parent.version}</version>
+            </dependency>
+        </dependencies>
+
+
+    </dependencyManagement>
+
+
+    <distributionManagement>
+        <repository>
+            <id>releases</id>
+            <url>http://nexus.aihuoshi.net/repository/maven-releases/</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>snapshots</id>
+            <url>http://nexus.aihuoshi.net/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <!-- 主仓库设置 -->
+    <repositories>
+        <repository>
+            <id>aihuoshi-public</id>
+            <url>http://nexus.aihuoshi.net/repository/maven-public/</url>
+        </repository>
+    </repositories>
+    <!-- 插件仓库设置 -->
+    <pluginRepositories>
+        <pluginRepository>
+            <id>aihuoshi-public</id>
+            <url>http://nexus.aihuoshi.net/repository/maven-public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <build>
+        <plugins>
+            <!--指定JDK编译版本 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <!-- 打包跳过测试 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <skipTests>true</skipTests>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <!-- 绑定source插件到Maven的生命周期 -->
+                        <phase>install</phase>
+                        <!--在生命周期后执行绑定的source插件的goals -->
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- 避免font文件的二进制文件格式压缩破坏 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <nonFilteredFileExtensions>
+                        <nonFilteredFileExtension>woff</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>woff2</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>eot</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>ttf</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>svg</nonFilteredFileExtension>
+                    </nonFilteredFileExtensions>
+                </configuration>
+            </plugin>
+
+            <!-- 一键更新子模块版本号 -->
+            <!-- mvn -N versions:update-child-modules -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>2.15.0</version>
+                <configuration>
+                    <generateBackupPoms>false</generateBackupPoms>
+                </configuration>
+            </plugin>
+        </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                    <include>**/*.json</include>
+                    <include>**/*.ftl</include>
+                </includes>
+            </resource>
+        </resources>
+    </build>
+</project>

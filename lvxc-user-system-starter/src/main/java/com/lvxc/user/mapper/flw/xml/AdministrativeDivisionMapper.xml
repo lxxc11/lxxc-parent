@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lvxc.index.mapper.bdlc.division.AdministrativeDivisionMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lvxc.user.entity.AdministrativeDivision">
+        <result column="id" property="id" />
+        <result column="is_delete" property="isDelete" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+        <result column="district_code" property="districtCode" />
+        <result column="district_name" property="districtName" />
+        <result column="province" property="province" />
+        <result column="city" property="city" />
+        <result column="area" property="area" />
+        <result column="upper_level_district_code" property="upperLevelDistrictCode" />
+        <result column="phone_area_code" property="phoneAreaCode" />
+        <result column="gov_residence" property="govResidence" />
+        <result column="geo_division" property="geoDivision" />
+        <result column="province_code" property="provinceCode" />
+        <result column="city_code" property="cityCode" />
+        <result column="area_code" property="areaCode" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id,
+        is_delete, create_time, update_time, district_code, district_name, province, city, area, upper_level_district_code, phone_area_code, gov_residence, geo_division, province_code, city_code, area_code
+    </sql>
+
+</mapper>

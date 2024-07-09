@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.lvxc.enc.JasyptSpringBootAutoConfiguration
+
+org.springframework.cloud.bootstrap.BootstrapConfiguration=com.lvxc.enc.JasyptSpringCloudBootstrapConfiguration

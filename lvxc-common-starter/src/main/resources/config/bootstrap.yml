@@ -1,0 +1,41 @@
+minio:
+  minio_url:
+  download_url:
+  minio_name:
+  minio_pass:
+  bucketName:
+
+
+mail:
+#  发信服务器(SMTP)
+  host: smtp.qq.com   #  如果是运维转发的只需要ip  例子:10.68.39.253
+#  端口
+  port: 25  # isLocal:false  此端口默认为25不需要修改  true如果是本地化的情况加可以改成运维转发后的端口   例子: 9001
+# 发件人邮箱
+  username:
+#  这个密码不是登录邮箱的密码而是对应邮箱的授权码
+  password:
+#  发件人邮箱
+  from:
+#  是否本地化
+  isLocal: false
+# 是否开启日志打印
+  debug: false
+
+
+task:
+  pool:
+    # 核心线程池大小
+    core-pool-size: 10
+    # 最大线程数
+    max-pool-size: 30
+    # 活跃时间
+    keep-alive-seconds: 60
+    # 队列容量
+    queue-capacity: 200
+
+#腾讯云相关参数
+tencent:
+  secretID:
+  secretKey:
+  region:

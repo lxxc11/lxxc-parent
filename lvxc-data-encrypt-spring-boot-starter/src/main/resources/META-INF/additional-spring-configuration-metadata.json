@@ -1,0 +1,73 @@
+{
+  "groups": [
+    {
+      "name": "lvxc.data.encrypt",
+      "type": "com.lvxc.encrypt.properties.DataEncryptProperties",
+      "sourceType": "com.lvxc.encrypt.properties.DataEncryptProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "lvxc.data.encrypt.enable",
+      "type": "java.lang.Boolean",
+      "description": "启用参数和字段加密.",
+      "sourceType": "com.lvxc.encrypt.properties.DataEncryptProperties"
+    },
+    {
+      "name": "lvxc.data.encrypt.asymmetric-algo",
+      "type": "java.lang.String",
+      "description": "非对称加密算法.",
+      "sourceType": "com.lvxc.encrypt.properties.DataEncryptProperties"
+    },
+    {
+      "name": "lvxc.data.encrypt.pub-key",
+      "type": "java.lang.String",
+      "description": "公钥.",
+      "sourceType": "com.lvxc.encrypt.properties.DataEncryptProperties"
+    },
+    {
+      "name": "lvxc.data.encrypt.prv-key",
+      "type": "java.lang.String",
+      "description": "私钥.",
+      "sourceType": "com.lvxc.encrypt.properties.DataEncryptProperties"
+    },
+    {
+      "name": "lvxc.data.encrypt.digest-algo",
+      "type": "java.lang.String",
+      "description": "摘要加密算法.",
+      "sourceType": "com.lvxc.encrypt.properties.DataEncryptProperties"
+    },
+    {
+      "name": "lvxc.data.encrypt.digest-times",
+      "type": "java.lang.Integer",
+      "description": "摘要加密次数.",
+      "sourceType": "com.lvxc.encrypt.properties.DataEncryptProperties"
+    },
+    {
+      "name": "lvxc.data.encrypt.digest-salt",
+      "type": "java.lang.String",
+      "description": "摘要加密盐值.",
+      "sourceType": "com.lvxc.encrypt.properties.DataEncryptProperties"
+    },
+    {
+      "name": "lvxc.data.encrypt.digest-salt-position",
+      "type": "java.lang.Integer",
+      "description": "摘要加密加盐位置.",
+      "sourceType": "com.lvxc.encrypt.properties.DataEncryptProperties"
+    },
+    {
+      "name": "lvxc.data.encrypt.symmetric-algo",
+      "type": "java.lang.String",
+      "description": "对称加密算法.",
+      "sourceType": "com.lvxc.encrypt.properties.DataEncryptProperties"
+    },
+    {
+      "name": "lvxc.data.encrypt.symmetric-key",
+      "type": "java.lang.String",
+      "description": "对称加密密钥.",
+      "sourceType": "com.lvxc.encrypt.properties.DataEncryptProperties"
+    }
+  ],
+  "hints": [
+  ]
+}

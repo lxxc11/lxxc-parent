@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lvxc.user.mapper.flw.SysLogMapper">
+
+    <select id="pageList" resultType="com.lvxc.user.entity.SysLog">
+        select sp.system_name  as platformName, sl.* from sys_log sl  left join sys_platform sp on sl.platform_id  = sp.id
+        <where>
+            1 = 1
+            <if test="dto.platformId != null and dto.platformId !=''">
+                and sl.platform_id = #{dto.platformId}
+            </if>
+            <if test="dto.beginTime != null and dto.beginTime !=''">
+                and sl.create_time  &gt;= #{dto.beginTime}
+            </if>
+            <if test="dto.endTime != null and dto.endTime !=''">
+                and sl.create_time &lt;= #{dto.endTime}
+            </if>
+            <if test="dto.operateType != null and dto.operateType !=''">
+                and sl.operate_type = #{dto.operateType}
+            </if>
+            <if test="dto.userName != null and dto.userName !=''">
+                and sl.user_name LIKE concat('%', #{dto.userName}::text, '%')
+            </if>
+            <if test="dto.logType != null and dto.logType !=''">
+                and sl.log_type = #{dto.logType}
+            </if>
+        </where>
+    </select>
+
+    <select id="getList" resultType="com.lvxc.user.entity.SysLog">
+        select sp.system_name as platformName , sl.* from sys_log sl  left join sys_platform sp on sl.platform_id  = sp.id
+        <where>
+            1=1
+            <if test="dto.platformId != null and dto.platformId !=''">
+                and sl.platform_id = #{dto.platformId}
+            </if>
+            <if test="dto.beginTime != null and dto.beginTime !=''">
+                and sl.create_time  &gt;= #{dto.beginTime}
+            </if>
+            <if test="dto.endTime != null and dto.endTime !=''">
+                and sl.create_time &lt;= #{dto.endTime}
+            </if>
+            <if test="dto.operateType != null and dto.operateType !=''">
+                and sl.operate_type = #{dto.operateType}
+            </if>
+            <if test="dto.userName != null and dto.userName !=''">
+                and sl.user_name LIKE concat('%', #{dto.userName}::text, '%')
+            </if>
+            <if test="dto.logType != null and dto.logType !=''">
+                and sl.log_type = #{dto.logType}
+            </if>
+        </where>
+    </select>
+
+</mapper>

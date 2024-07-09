@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lvxc.user.mapper.flw.SysDataSetMapper">
+
+    <select id="getDataSetByRoleIds" resultType="com.lvxc.user.domain.vo.LoginDataSet">
+        SELECT
+           distinct ds.*
+        FROM
+            "sys_data_set" ds
+        JOIN "sys_role_menu_data" md ON ds."id" = md.data_set_id
+        WHERE
+            ds.del_flag = FALSE
+        <if test="list != null and list.size() > 0">
+            AND md.role_id IN
+            <foreach collection="list" item="item" separator="," close=")" open="(" index="index">
+                #{item}
+            </foreach>
+        </if>
+    </select>
+
+</mapper>

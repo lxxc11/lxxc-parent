@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lvxc.user.mapper.DemoTableMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lvxc.user.entity.DemoTable">
+        <id column="id" property="id" />
+        <result column="text_content" property="textContent" />
+        <result column="pwd_content" property="pwdContent" />
+        <result column="cell_content" property="cellContent" />
+        <result column="num_content" property="numContent" />
+        <result column="checkbox_content" property="checkboxContent" />
+        <result column="radiobox_content" property="radioboxContent" />
+        <result column="inputfield_content" property="inputfieldContent" />
+        <result column="begin_time" property="beginTime" />
+        <result column="end_time" property="endTime" />
+        <result column="richtext_content" property="richtextContent" />
+        <result column="time_content" property="timeContent" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, text_content, pwd_content, cell_content, num_content, checkbox_content, radiobox_content, inputfield_content, begin_time, end_time, richtext_content, time_content
+    </sql>
+
+</mapper>

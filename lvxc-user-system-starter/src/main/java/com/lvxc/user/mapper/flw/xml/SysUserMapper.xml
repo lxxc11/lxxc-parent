@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lvxc.user.mapper.flw.SysUserMapper">
+
+    <select id="getPageList" resultType="com.lvxc.user.domain.vo.SysUserPageVo">
+        SELECT DISTINCT
+            su."id",
+            su.user_name,
+            su.real_name,
+            (SELECT string_agg(sd.depart_name,',') FROM "sys_depart" sd JOIN sys_user_depart sud ON sd."id" = sud.depart_id WHERE sud."type" = 0 AND sd."id" = sud.depart_id AND sud.user_id = su."id") departName,
+            (SELECT string_agg(sd.depart_name, ',') FROM "sys_depart" sd JOIN sys_user_depart sud ON sd."id" = sud.depart_id WHERE sd.del_flag = false AND sud."type" = 1 AND sud.user_id = su."id") partTimeDepartName,
+            su.contact,
+            su.email,
+            su.position,
+            su.status,
+            su.effective_time,
+            (SELECT string_agg(sr.role_name, ',') FROM sys_role sr JOIN sys_user_role sur ON sr."id" = sur.role_id WHERE sr.del_flag = false AND sur.user_id = su."id") roleName,
+            su.private_key,
+            su.create_time,
+            su.head_picture
+        FROM
+            "sys_user" su
+        LEFT JOIN "sys_user_depart" sud ON su."id" = sud.user_id
+        LEFT JOIN "sys_user_role" sur ON su."id" = sur.user_id
+        LEFT JOIN "sys_role_platform" srp ON sur.role_id = srp.role_id
+        WHERE
+            su.del_flag = false
+        <if test="dto.platformIds != null and dto.platformIds.size() > 0">
+            AND srp.platform_id IN
+            <foreach collection="dto.platformIds" item="item" separator="," close=")" open="(" index="index">
+                #{item}
+            </foreach>
+        </if>
+        <if test="dto.userName != null and dto.userName != ''">
+            AND su.user_name LIKE concat('%', #{dto.userName}::text, '%')
+        </if>
+        <if test="dto.departIds != null and dto.departIds.size() > 0">
+            AND sud.depart_id IN
+            <foreach collection="dto.departIds" item="item" separator="," close=")" open="(" index="index">
+                #{item}
+            </foreach>
+        </if>
+        <if test="dto.status != null">
+            AND su.status = #{dto.status}
+        </if>
+        <if test="dto.type == null">
+            AND su.type = 1
+        </if>
+        <if test="dto.type != null and dto.type != 0">
+            AND su.type = #{dto.type}
+        </if>
+        <if test="dto.roleIds != null and dto.roleIds.size() > 0">
+            AND sur.role_id IN
+            <foreach collection="dto.roleIds" item="item" separator="," close=")" open="(" index="index">
+                #{item}
+            </foreach>
+        </if>
+        ORDER BY su.create_time DESC
+    </select>
+
+</mapper>

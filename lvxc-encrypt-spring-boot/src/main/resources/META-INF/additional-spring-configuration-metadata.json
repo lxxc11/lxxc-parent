@@ -1,0 +1,33 @@
+{
+  "groups": [
+    {
+      "name": "lvxc.encrypt",
+      "type": "com.lvxc.enc.properties.JasyptEncryptorConfigurationProperties",
+      "sourceType": "com.lvxc.enc.properties.JasyptEncryptorConfigurationProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "lvxc.encrypt.bootstrap",
+      "type": "java.lang.Boolean",
+      "description": "Bootstrap configuration applicable only in spring-cloud environments. Can be explicitly turned-off in bootstrap.properties or as a command line argument.",
+      "sourceType": "com.lvxc.enc.properties.JasyptEncryptorConfigurationProperties",
+      "defaultValue": true
+    }
+  ],
+  "hints": [
+    {
+      "name": "lvxc.encrypt.bootstrap",
+      "values": [
+        {
+          "value": true,
+          "description": "enable bootstrap of jasypt-spring-boot for spring-cloud environemnts."
+        },
+        {
+          "value": false,
+          "description": "disable bootstrap of jasypt-spring-boot for spring-cloud environemnts."
+        }
+      ]
+    }
+  ]
+}
